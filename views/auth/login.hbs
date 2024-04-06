@@ -1,0 +1,72 @@
+<div class="login-tabs">
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a class="active" href="#login">Login</a></li>
+                <li class="tab col s6"><a  href="#register">Registration</a></li>
+            </ul>
+        </div>
+        <div id="login" class="col s6 offset-s3">
+            {{#if error}}
+                <p class="alert">{{error}}</p>
+            {{/if}}
+            <h3>Login to account</h3>
+            <form method="POST" action="/auth/login">
+                <div class="input-field">
+                    <input placeholder="Email" name="email" id="email" type="email" class="validate" required>
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="add email"></span>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="Password" name="password" id="password" type="password" class="validate" required> 
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-error="add password"></span>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+               
+                <button type="submit" class="btn btn-primary">Login</button>
+                
+                 <a href="/auth/reset">Forgot Password?</a>
+            </form>
+        </div>
+
+        <div id="register" class="col s6 offset-s3">
+
+            {{#if error}}
+                <p class="alert">{{error}}</p>
+            {{/if}}
+            <h3>Register to account</h3>
+            <form method="POST" action="/auth/register">
+                <div class="input-field">
+                    <input placeholder="Email" name="email" id="remail" type="email" class="validate" required>
+                    <label for="remail">Email</label>
+                    <span class="helper-text" data-error="add email"></span>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="Name" name="name" id="name" type="text" class="validate" required>
+                    <label for="name">Name</label>
+                    <span class="helper-text" data-error="add name"></span>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="Password" name="password" id="rpassword" type="password" class="validate" required> 
+                    <label for="rpassword">Password</label>
+                    <span class="helper-text" data-error="add password"></span>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+
+                 <div class="input-field">
+                    <input placeholder="Password" name="confirm" id="confirm" type="password" class="validate" required> 
+                    <label for="confirm">Password</label>
+                    <span class="helper-text" data-error="add confirm"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.nav-wrapper {
+    padding: 0 2rem;
+}
+
+.price {
+    font-size: 2rem;
+}
+
+
+.course {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course h1 {
+    margin-bottom: 2rem;
+}
+
+.course img {
+   max-width: 600px;
+   height: auto;
+}
+
+.course p {
+  margin-top: 2em;
+ }
+
+ .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .login-tabs {
+    margin-top: 24px;
+ }

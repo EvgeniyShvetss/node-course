@@ -1,0 +1,31 @@
+ <h1>Eddit course {{course.title}}</h1>
+
+<form method="POST" action="/courses/edit">
+     <div class="input-field">
+          <input placeholder="Placeholder" name="title" id="title" type="text" class="validate" value="{{course.title}}" required>
+          <label for="title">title</label>
+           <span class="helper-text" data-error="add title">Helper text</span>
+        </div>
+
+         <div class="input-field">
+          <input placeholder="Placeholder" name="price" id="price" type="number" class="validate" value="{{course.price}}" required> 
+          <label for="price">price</label>
+           <span class="helper-text" data-error="add price">Helper text</span>
+        </div>
+        <input type="hidden" name="id" value="{{course._id}}">
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+
+           <div class="input-field">
+          <input placeholder="Placeholder" name="img" id="img" type="text" class="validate" value="{{course.img}}" required>
+          <label for="img">image</label>
+           <span class="helper-text" data-error="add img">Helper text</span>
+
+          <button type="submit" class="btn btn-primary">Edit courses</button>
+        </div>
+</form>
+
+<form method="POST" action="/courses/remove">
+   <input type="hidden" name="id" value="{{course._id}}">
+   <input type="hidden" name="_csrf" value="{{csrf}}">
+   <button type="submit" class="btn red">Remove</button>
+</form>
